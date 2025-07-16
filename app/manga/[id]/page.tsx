@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Manga, Genre } from '@/app/types'; 
+import { Manga, Genre } from '@/app/types';
 import { useBookmarks } from '@/app/hooks/useBookmarks';
 
 export default function MangaDetailPage({ params }: { params: { id: string } }) {
@@ -26,7 +26,8 @@ export default function MangaDetailPage({ params }: { params: { id: string } }) 
         } else {
           setManga(null);
         }
-      } catch (error) {
+      } catch (error) { // --- PERBAIKAN DI SINI ---
+        console.error("Failed to fetch manga details:", error); // Menggunakan variabel 'error'
         setManga(null);
       }
       setIsLoading(false);
@@ -68,13 +69,12 @@ export default function MangaDetailPage({ params }: { params: { id: string } }) 
 
       <section className="w-full md:w-3/4">
         <h1 className="text-4xl font-bold text-primary">{manga.title}</h1>
-        
-        {/* GENRE DISPLAY SECTION */}
+
         <div className="flex flex-wrap gap-2 my-4">
             {manga.genres.map((genre: Genre) => (
-                <Link 
-                  href={`/?genre=${genre.mal_id}`} 
-                  key={genre.mal_id} 
+                <Link
+                  href={`/?genre=${genre.mal_id}`}
+                  key={genre.mal_id}
                   className="px-3 py-1 bg-secondary text-primary rounded-full text-sm hover:bg-accent"
                 >
                   {genre.name}

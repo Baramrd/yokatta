@@ -10,8 +10,8 @@ export default async function SearchPage({
   const query = searchParams['q'] ?? '';
   const page = searchParams['page'] ?? '1';
   const limit = 20;
-
-  let apiUrl = `https://api.jikan.moe/v4/manga?q=${query}&page=${page}&limit=${limit}`;
+  
+  const apiUrl = `https://api.jikan.moe/v4/manga?q=${query}&page=${page}&limit=${limit}`;
 
   const res = await fetch(apiUrl);
   if (!res.ok) {
