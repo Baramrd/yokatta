@@ -3,25 +3,20 @@ import MangaCard from './components/MangaCard';
 import PaginationControls from './components/PaginationControls';
 import GenreFilter from './components/GenreFilter';
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const page = searchParams['page'] ?? '1';
+type PageProps = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function HomePage({ searchParams }: PageProps) {
+  const awaitedSearchParams = await searchParams;
+  const page = awaitedSearchParams['page'] ?? '1';
   const limit = 20;
-  const genres = searchParams['genres'] ?? '';
+  const genres = awaitedSearchParams['genres'] ?? '';
 
   let apiUrl: string;
-
   if (genres) {
-    // JIKA GENRE DIPILIH:
-    // Endpoint /manga digunakan untuk mendapatkan daftar manga berdasarkan genre.
-    // Urutkan manga berdasarkan popularitas dalam genre tersebut.
     apiUrl = `https://api.jikan.moe/v4/manga?genres=${genres}&page=${page}&limit=${limit}&order_by=popularity`;
   } else {
-    // JIKA TIDAK ADA FILTER:
-    // Tetap gunakan endpoint /top/manga untuk daftar peringkat terbaik secara umum.
     apiUrl = `https://api.jikan.moe/v4/top/manga?page=${page}&limit=${limit}`;
   }
 

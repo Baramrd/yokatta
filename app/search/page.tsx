@@ -2,15 +2,18 @@ import { Manga } from '../types';
 import MangaCard from '../components/MangaCard';
 import PaginationControls from '../components/PaginationControls';
 
-export default async function SearchPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
-  const query = searchParams['q'] ?? '';
-  const page = searchParams['page'] ?? '1';
+// Tipe props yang baru, di mana searchParams adalah sebuah Promise
+type PageProps = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function SearchPage({ searchParams }: PageProps) {
+  // --- KUNCI PERBAIKAN: Lakukan 'await' pada searchParams ---
+  const awaitedSearchParams = await searchParams;
+  const query = awaitedSearchParams['q'] ?? '';
+  const page = awaitedSearchParams['page'] ?? '1';
   const limit = 20;
-  
+
   const apiUrl = `https://api.jikan.moe/v4/manga?q=${query}&page=${page}&limit=${limit}`;
 
   const res = await fetch(apiUrl);
@@ -29,7 +32,6 @@ export default async function SearchPage({
       <h1 className="text-3xl font-bold mb-8">
         Search Results for: <span className="text-highlight">{query}</span>
       </h1>
-      {/* Pass the hasPrevPage prop to the component */}
       <PaginationControls hasNextPage={hasNextPage} hasPrevPage={hasPrevPage} />
       {searchResults.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -40,7 +42,6 @@ export default async function SearchPage({
       ) : (
         <p className="text-center text-gray-400">No manga found for this search.</p>
       )}
-      {/* Pass the hasPrevPage prop to the component */}
       <PaginationControls hasNextPage={hasNextPage} hasPrevPage={hasPrevPage} />
     </>
   );
