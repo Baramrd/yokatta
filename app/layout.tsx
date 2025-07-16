@@ -6,8 +6,8 @@ import Navbar from './components/Navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Yokatta Manga Reader',
-  description: 'A simple manga reader for your portfolio',
+  title: 'Yokatta Manga Discovery',
+  description: 'A simple manga discovery web app using Jikan API',
 };
 
 export default function RootLayout({
