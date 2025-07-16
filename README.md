@@ -1,18 +1,14 @@
-````markdown
+
 # 🌸 Yokatta — A Manga Discovery Web App
 
-Yokatta is a sleek and modern web app for discovering, tracking, and exploring manga. Built with the latest front‑end stack, it delivers a seamless user experience for browsing a vast manga library — powered by the public [Jikan API](https://docs.api.jikan.moe).
+Yokatta is a sleek and modern web app for discovering, tracking, and exploring manga. Built with the latest front‑end stack, it delivers a seamless user experience for browsing a vast manga library — powered by the public 
+[Jikan API](https://docs.api.jikan.moe)
 
 ---
-
-## 🚀 Live Demo
-
-[https://yokatta-discovery.vercel.app](➡️ View the live application)
-
----
+## 🚀 Live Demo 
+[➡️ View the live application](https://yokatta-discovery.vercel.app)
 
 ## 📖 Table of Contents
-
 - [About The Project](#about-the-project)  
 - [✨ Key Features](#-key-features)  
 - [🧰 Tech Stack](#-tech-stack)  
@@ -77,4 +73,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 * Many thanks to the [Jikan API](https://docs.api.jikan.moe) team for powering this application with comprehensive manga data.
 
----
