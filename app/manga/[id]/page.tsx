@@ -6,7 +6,13 @@ import Link from 'next/link';
 import { Manga, Genre } from '@/app/types';
 import { useBookmarks } from '@/app/hooks/useBookmarks';
 
-export default function MangaDetailPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function MangaDetailPage({ params }: PageProps) {
   const [manga, setManga] = useState<Manga | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { isBookmarked, toggleBookmark } = useBookmarks();
@@ -26,8 +32,8 @@ export default function MangaDetailPage({ params }: { params: { id: string } }) 
         } else {
           setManga(null);
         }
-      } catch (error) { // --- PERBAIKAN DI SINI ---
-        console.error("Failed to fetch manga details:", error); // Menggunakan variabel 'error'
+      } catch (error) {
+        console.error("Failed to fetch manga details:", error);
         setManga(null);
       }
       setIsLoading(false);
