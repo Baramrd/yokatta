@@ -1,12 +1,5 @@
 import MangaDetailView from './MangaDetailView';
 
-interface PageProps {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default function MangaDetailPage({ params }: PageProps) {
-  const { id } = params;
-
-  return <MangaDetailView mangaId={id} />;
+export default async function MangaDetailPage({ params }: { params: { id: string } }) {
+  return <MangaDetailView mangaId={params.id} />;
 }
