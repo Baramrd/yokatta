@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+````markdown
+# 🌸 Yokatta — A Manga Discovery Web App
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square)](https://yokatta-discovery.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Yokatta is a sleek and modern web application for discovering, tracking, and exploring manga. Built with the latest front-end technologies, it offers a seamless user experience for browsing a vast library of manga titles — powered by the public [Jikan API](https://docs.api.jikan.moe).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📸 Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[🔗 View Live Application](https://yokatta-discovery.vercel.app)
 
-## Learn More
+![App Screenshot](https://via.placeholder.com/800x450.png?text=Add+A+Screenshot+Of+Your+App+Here)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📖 About The Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project was created as a **portfolio piece** to demonstrate practical skills in building a feature-rich, data-driven application using a **modern web stack**. The goal is to offer manga enthusiasts an intuitive and responsive interface to find and manage their favorite series.
 
-## Deploy on Vercel
+The app handles real-world challenges such as:
+- Fetching and sanitizing public API data
+- Managing asynchronous state
+- Structuring scalable frontend architecture
+- Providing persistent UX via client-side storage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ✨ Key Features
+
+- **🔍 Dynamic Discovery**  
+  Paginated browsing of the top-ranked and most popular manga series.
+
+- **🎯 Advanced Genre Filtering**  
+  Multi-select genre filter with search functionality. Sensitive genres are hidden by default.
+
+- **🔎 Site-Wide Search**  
+  Search manga by title using the navigation bar — with instant results.
+
+- **📌 Persistent Bookmarking**  
+  Save your favorite manga directly to your browser using `localStorage`.
+
+- **📚 Manga Detail View**  
+  Dedicated manga pages show cover art, synopsis, genres, and a dynamic chapter list.
+
+- **📱 Responsive Design**  
+  Optimized UI for all devices — from smartphones to large desktop displays.
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework**: Next.js (v15, App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **API**: [Jikan API](https://docs.api.jikan.moe)
+- **State Management**: React Hooks (`useState`, `useEffect`, `useCallback`)
+- **Client Storage**: `localStorage`
+- **Deployment**: Vercel
+
+---
+
+## 🚀 Getting Started
+
+### ⚙️ Prerequisites
+
+- Node.js (version **18.x** or later)
+- npm
+
+### 🔧 Installation & Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/your-username/yokatta.git
+````
+
+2. **Navigate into the project directory**
+
+   ```bash
+   cd yokatta
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action.
+
+---
+
+## 🙏 Acknowledgements
+
+* Huge thanks to the amazing [Jikan API](https://docs.api.jikan.moe) team for providing access to detailed anime and manga data.
+
+---
