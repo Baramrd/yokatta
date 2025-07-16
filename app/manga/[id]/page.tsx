@@ -6,13 +6,16 @@ import Link from 'next/link';
 import { Manga, Genre } from '@/app/types';
 import { useBookmarks } from '@/app/hooks/useBookmarks';
 
+// --- PERBAIKAN FINAL DI SINI ---
+// Kita mendefinisikan PageProps agar sesuai persis dengan apa yang diharapkan Next.js,
+// yaitu dengan menyertakan 'params' dan 'searchParams', meskipun kita tidak menggunakan searchParams.
 interface PageProps {
-  params: {
-    id: string;
-  };
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
+// --- AKHIR DARI PERBAIKAN ---
 
-export default function MangaDetailPage({ params }: PageProps) {
+export default function MangaDetailPage({ params }: PageProps) { // <-- Tetap gunakan PageProps di sini
   const [manga, setManga] = useState<Manga | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { isBookmarked, toggleBookmark } = useBookmarks();
