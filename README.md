@@ -16,7 +16,6 @@ Yokatta is a sleek and modern web app for discovering, tracking, and exploring m
   - [Prerequisites](#prerequisites)  
   - [Installation & Setup](#installation--setup)  
 - [🙏 Acknowledgements](#-acknowledgements)  
-- [📄 License](#-license)
 
 ---
 
