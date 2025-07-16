@@ -1,5 +1,3 @@
----
-
 ````markdown
 # 🌸 Yokatta — A Manga Discovery Web App
 
