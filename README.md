@@ -7,7 +7,7 @@ Yokatta is a sleek and modern web app for discovering, tracking, and exploring m
 
 ## 🚀 Live Demo
 
-[➡️ View the live application](https://yokatta-discovery.vercel.app)
+[https://yokatta-discovery.vercel.app](➡️ View the live application)
 
 ---
 
